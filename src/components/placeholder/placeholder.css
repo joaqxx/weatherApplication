@@ -1,0 +1,214 @@
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.center-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%; /* full viewport height */
+  margin-bottom: 107px;
+  margin-top: 106px;
+}
+
+.placeholder-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 20vh;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(18, 75, 168, 0.1) 0%, rgba(6, 62, 121, 0.1) 100%);
+  border-radius: 24px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 350px;
+}
+
+
+/* Added floating background elements */
+.placeholder-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.floating-cloud {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.3);
+  animation: float 6s ease-in-out infinite;
+}
+
+.cloud-1 {
+  top: 20%;
+  left: 15%;
+  animation-delay: 0s;
+}
+
+.cloud-2 {
+  top: 70%;
+  right: 20%;
+  animation-delay: 3s;
+}
+
+.floating-sun {
+  position: absolute;
+  top: 15%;
+  right: 15%;
+  color: rgba(251, 191, 36, 0.4);
+  animation: rotate 20s linear infinite;
+}
+
+/* Enhanced search icon with pulse animation */
+.search-icon-wrapper {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.placeholder-icon {
+  color: #e2e8f0;
+  opacity: 0.9;
+  animation: pulse 2s ease-in-out infinite;
+  filter: drop-shadow(0 4px 8px rgba(59, 130, 246, 0.3));
+}
+
+.search-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  border: 2px solid rgba(59, 130, 246, 0.3);
+  border-radius: 50%;
+  animation: ripple 2s ease-out infinite;
+}
+
+/* Improved typography and colors */
+.placeholder-content {
+  position: relative;
+  z-index: 1;
+}
+
+.placeholder-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #f1f5f9;
+  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.placeholder-text {
+  font-size: 1.125rem;
+  opacity: 0.8;
+  color: #cbd5e1;
+  margin-bottom: 2rem;
+  max-width: 400px;
+  line-height: 1.6;
+}
+
+/* Added suggestion chips */
+.suggestion-chips {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  color: #e2e8f0;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.chip:hover {
+  background: rgba(59, 130, 246, 0.2);
+  border-color: rgba(59, 130, 246, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+/* Added animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .placeholder-title {
+    font-size: 1.875rem;
+  }
+
+  .placeholder-text {
+    font-size: 1rem;
+  }
+
+  .suggestion-chips {
+    gap: 0.5rem;
+  }
+
+  .chip {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.8rem;
+  }
+}

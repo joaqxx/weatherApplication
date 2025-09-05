@@ -1,0 +1,304 @@
+.forecast-container {
+  max-width: 1148px;
+  margin: 36px auto;
+  margin-bottom: 50px; /* extra clarity */
+}
+
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 24px;
+  text-align: left;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.forecast-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  color: #1a1a1a;
+  /* Added min-height for consistent card sizing */
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+}
+
+.forecast-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.daily-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 16px;
+  transition: all 0.2s ease;
+}
+
+.daily-item:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.day-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+
+.weather-icon {
+  width: 48px;
+  height: 48px;
+  color: #dadada;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.day-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.day {
+  color: #1a1a1a;
+  font-size: 18px;
+  font-weight: 600;
+  text-shadow: none;
+}
+
+.description {
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+.temperature-range {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.temp-max {
+  color: #1a1a1a;
+  font-size: 20px;
+  font-weight: 700;
+  text-shadow: none;
+}
+
+.temp-min {
+  color: #6b7280;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.daily-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* Reduced gap for better fitting */
+  gap: 6px;
+  /* Adjusted padding for better space utilization */
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.05);
+  flex: 1;
+}
+
+.detail-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 12px 10px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  /* Added text alignment for better presentation */
+  text-align: center;
+}
+
+.detail-card:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: translateY(-1px);
+}
+
+.detail-label {
+  color: #6b7280;
+  /* Reduced font size for better fitting */
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.detail-value {
+  color: #1a1a1a;
+  /* Reduced font size for better fitting */
+  font-size: 12px;
+  font-weight: 600;
+  text-shadow: none;
+}
+
+/* Added styles for the logo card */
+.logo-card {
+  background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+  backdrop-filter: blur(20px);
+  border: 0.5px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+}
+
+.logo-card:hover {
+  background: linear-gradient(90deg, #0a1224 0%, #182848 100%);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+}
+
+.logo-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  color: white;
+}
+
+.app-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  width: 64px;
+  height: 64px;
+  color: white;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.app-name {
+  font-size: 24px;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
+}
+
+.logo-tagline {
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.9;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .forecast-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .forecast-grid {
+    grid-template-columns: 1fr;
+    /* Updated rows to accommodate 7 forecast cards + 1 logo card */
+    grid-template-rows: repeat(8, 1fr);
+  }
+
+  .daily-details-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    /* Adjusted padding for mobile */
+    padding: 0 12px 12px;
+  }
+
+  .detail-card {
+    /* Further reduced padding for mobile */
+    padding: 6px 8px;
+  }
+
+  .logo-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .app-name {
+    font-size: 20px;
+  }
+
+  .logo-tagline {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .daily-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .forecast-container {
+    padding: 16px;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .app-name {
+    font-size: 18px;
+  }
+
+  .logo-tagline {
+    font-size: 10px;
+  }
+}
+
+/* Accordion Overrides */
+.accordion__item {
+  border: none !important;
+}
+
+.accordion__button {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  width: 100%;
+}
+
+.accordion__button:hover {
+  background: transparent !important;
+}
+
+.accordion__panel {
+  padding: 0 !important;
+}

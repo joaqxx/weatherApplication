@@ -1,0 +1,327 @@
+/* Complete redesign with dark futuristic theme */
+.search-container {
+    max-width: 1200px;
+    margin: 36px auto 32px;
+    padding: 0 16px;
+    color: #f1f5f9;
+    font-family: 'Roboto', Arial, sans-serif;
+
+}
+
+.search-wrapper {
+  position: relative;
+}
+
+.search-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 8px;
+  align-items: stretch;
+}
+
+.search-input-wrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.15); /* lighter & more glassy */
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 16px;
+  padding: 0 16px;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 8px 20px rgba(0, 0, 0, 0.15),  /* deeper shadow */
+    0 0 10px rgba(59, 130, 246, 0.3); /* glowing accent */
+}
+
+
+.search-input-wrapper:hover {
+  border-color: rgba(174, 176, 180, 0.5);
+  box-shadow: 0 8px 25px -5px rgba(59, 130, 246, 0.1);
+}
+
+.search-input-wrapper:focus-within {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1), 0 8px 25px -5px rgba(59, 130, 246, 0.2);
+  transform: translateY(-1px);
+}
+
+.search-icon {
+  color: white;
+  margin-right: 12px;
+  transition: color 0.2s ease;
+}
+
+.search-input-wrapper:focus-within .search-icon {
+  color: #3b82f6;
+}
+
+.search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #f1f5f9;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 16px 0;
+  letter-spacing: 0.025em;
+}
+
+.search-input::placeholder {
+  color: white;
+  font-weight: 300;
+}
+
+.loading-icon {
+  color: white;
+  animation: spin 1s linear infinite;
+  margin-left: 8px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.search-button {
+  background: white;
+  color: rgb(0, 92, 198);
+  border: none;
+  border-radius: 16px;
+  padding: 16px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+  letter-spacing: 0.025em;
+}
+
+.search-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #2563eb 0%, #1e31af 100%);
+  box-shadow: 0 8px 25px -5px rgba(59, 130, 246, 0.3);
+  transform: translateY(-2px);
+  color: white;
+}
+
+.search-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.search-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Modern futuristic dropdown design */
+.suggestions-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 16px;
+  margin-top: 8px;
+  max-height: 280px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  animation: slideDown 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-item:hover {
+  background: rgba(59, 130, 246, 0.1);
+  transform: translateX(4px);
+}
+
+.suggestion-icon {
+  color: #64748b;
+  margin-right: 12px;
+  transition: color 0.2s ease;
+}
+
+.suggestion-item:hover .suggestion-icon {
+  color: #3b82f6;
+}
+
+.suggestion-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.suggestion-name {
+  color: #f1f5f9;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.025em;
+}
+
+.suggestion-country {
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+/* Custom scrollbar for dropdown */
+.suggestions-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.suggestions-dropdown::-webkit-scrollbar-track {
+  background: rgba(148, 163, 184, 0.1);
+  border-radius: 3px;
+}
+
+.suggestions-dropdown::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.3);
+  border-radius: 3px;
+}
+
+.suggestions-dropdown::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.5);
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 20px;
+  padding: 32px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-icon {
+  color: #ef4444;
+  margin: 0 auto 16px;
+  display: block;
+}
+
+.modal-title {
+  color: #f1f5f9;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  letter-spacing: 0.025em;
+}
+
+.modal-message {
+  color: #94a3b8;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.modal-button {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.2);
+  min-width: 100px;
+}
+
+.modal-button:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  box-shadow: 0 8px 25px -5px rgba(59, 130, 246, 0.3);
+  transform: translateY(-1px);
+}
+
+.modal-button:active {
+  transform: translateY(0);
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .search-form {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .search-button {
+    width: 100%;
+  }
+}

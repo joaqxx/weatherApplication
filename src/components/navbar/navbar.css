@@ -1,0 +1,165 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  /* Enhanced background with animated gradient */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  animation: gradientShift 8s ease-in-out infinite;
+  backdrop-filter: blur(15px);
+  color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+
+/* Added gradient animation for dynamic background */
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  /* Added hover effect for brand */
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+  transform: translateY(-2px);
+}
+
+.nav-icon {
+  color: #fff;
+  /* Added base transition for all icons */
+  transition: all 0.3s ease;
+}
+
+/* Added rotating animation for sun icon */
+.sun-icon {
+  animation: rotate 10s linear infinite;
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Added floating animation for cloud icon */
+.cloud-icon {
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 6px rgba(135, 206, 235, 0.5));
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.nav-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  /* Added text glow effect and animation */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  animation: textGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes textGlow {
+  from {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+  to {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+  }
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  /* Enhanced menu button with better transitions and hover effects */
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.menu-button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.menu-button:hover::before {
+  left: 100%;
+}
+
+/* Added pulse animation on navbar hover */
+.navbar:hover {
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+}
+
+.nav-logo {
+  height: 40px;
+  width: auto;
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .nav-title {
+    font-size: 1.2rem;
+  }
+
+  /* Reduced animation intensity on mobile */
+  .sun-icon {
+    animation-duration: 15s;
+  }
+
+  .cloud-icon {
+    animation-duration: 4s;
+  }
+}
