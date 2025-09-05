@@ -1,7 +1,8 @@
 .forecast-container {
   max-width: 1148px;
   margin: 36px auto;
-  margin-bottom: 50px; /* extra clarity */
+  margin-bottom: 50px;
+  padding: 0 16px;
 }
 
 
@@ -226,7 +227,10 @@
   .forecast-grid {
     grid-template-columns: 1fr;
     /* Updated rows to accommodate 7 forecast cards + 1 logo card */
-    grid-template-rows: repeat(8, 1fr);
+  }
+
+  .forecast-card {
+    min-height: 240px;
   }
 
   .daily-details-grid {
@@ -280,6 +284,24 @@
 
   .logo-tagline {
     font-size: 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .forecast-container {
+    padding: 0 12px;
+  }
+
+  .forecast-card {
+    min-height: 210px;
+  }
+
+  .detail-label {
+    font-size: 9px;
+  }
+
+  .detail-value {
+    font-size: 11px;
   }
 }
 

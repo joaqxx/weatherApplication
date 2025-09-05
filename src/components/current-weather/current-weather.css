@@ -205,9 +205,26 @@
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
+/* tablet tweaks */
+@media (max-width: 900px) {
+  .weather {
+    padding: 22px;
+    margin: 24px auto;
+  }
+
+  .temperature {
+    font-size: 42px;
+  }
+
+  .weather-icon {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+/* phones */
 @media (max-width: 640px) {
   .weather {
-    /* Reduced mobile padding */
     padding: 20px;
   }
 
@@ -226,13 +243,11 @@
     width: 100%;
     min-width: unset;
     max-width: unset;
-    /* Maintain 2x2 grid on mobile */
     grid-template-columns: 1fr 1fr;
     gap: 6px;
   }
 
   .temperature {
-    /* Adjusted mobile temperature size */
     font-size: 40px;
   }
 
@@ -242,5 +257,21 @@
 
   .parameter-value {
     font-size: 18px;
+  }
+}
+
+/* very small phones */
+@media (max-width: 360px) {
+  .temperature {
+    font-size: 34px;
+  }
+
+  .weather-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .details {
+    grid-template-columns: 1fr;
   }
 }

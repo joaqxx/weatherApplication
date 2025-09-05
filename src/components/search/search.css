@@ -325,3 +325,26 @@
     width: 100%;
   }
 }
+
+/* compact phones */
+@media (max-width: 480px) {
+  .search-input {
+    font-size: 15px;
+    padding: 14px 0;
+  }
+
+  .search-button {
+    padding: 14px 18px;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .search-input {
+    font-size: 14px;
+  }
+
+  .suggestions-dropdown {
+    max-height: 220px;
+  }
+}
